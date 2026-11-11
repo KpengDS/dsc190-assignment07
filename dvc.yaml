@@ -1,0 +1,28 @@
+stages:
+  clean:
+    cmd: python scripts/clean.py
+    deps:
+      - scripts/clean.py
+      - data/raw/events.csv
+      - pyproject.toml
+      - uv.lock
+    outs:
+      - data/clean/events.csv
+  transform:
+    cmd: python scripts/transform.py
+    deps:
+      - scripts/transform.py
+      - data/clean/events.csv
+      - pyproject.toml
+      - uv.lock
+    outs:
+      - data/transformed/events.csv
+  features:
+    cmd: python scripts/features.py
+    deps:
+      - scripts/features.py
+      - data/transformed/events.csv
+      - pyproject.toml
+      - uv.lock
+    outs:
+      - data/features/events.csv

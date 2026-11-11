@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.marimo/
+.DS_Store
+/data/clean/
+/data/transformed/
+/data/features/
+notebooks/__marimo__/
